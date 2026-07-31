@@ -73,13 +73,12 @@ public class MeetingRoom
     public string RoomTypeIcon =>
         RoomLayoutType switch
         {
-            RoomLayoutType.HollowSquare => "hollowsquare_icon.png",
-            RoomLayoutType.UShape => "ushape_icon.png",
-            RoomLayoutType.Classroom => "classroom_icon.png",
-            RoomLayoutType.Auditorium => "auditorium_icon.png",
-            _ => "room_icon.png"
-        };
-
+            RoomLayoutType.HollowSquare => "hollowsquare_icon.svg",
+            RoomLayoutType.UShape => "ushape_icon.svg",
+            RoomLayoutType.Classroom => "classroom_icon.svg",
+            RoomLayoutType.Auditorium => "auditorium_icon.svg",
+            _ => string.Empty
+        }; 
     /// <summary>
     /// Initializes a new meeting room.
     /// </summary>
