@@ -16,6 +16,10 @@
 		<data>
 		cWnYa78tW+dboW1NoJPLC+k0d08=
 		</data>
+		<key>MauiInfo.plist</key>
+		<data>
+		iEtuUGCV6JM3gxS/pO33swhmpp8=
+		</data>
 		<key>MauiSplash.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
 		Y78DTyz7+rkuDbhphGJe+YK2rLQ=
@@ -146,11 +150,11 @@
 		</data>
 		<key>RoomReservationApp.dll</key>
 		<data>
-		50XvUpsOHdBWAMe3P8ZCGzcZaQI=
+		tUfGJLmrQszN4E50DzPZw+gix2s=
 		</data>
 		<key>RoomReservationApp.pdb</key>
 		<data>
-		+cwGzoZbyXf1ee6Jlx/nCH0id3Q=
+		AeuGzD9TyeY4xLCx9IwyiUCzmGY=
 		</data>
 		<key>Settings.bundle/Root.plist</key>
 		<data>
@@ -1065,6 +1069,13 @@
 			0XcNqR3gh6S7aUPqbHK7RQclH9VvWE8A9xUGjb/4fv8=
 			</data>
 		</dict>
+		<key>MauiInfo.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tx0KXqEC+DvcCGyogQTEQWHcCWJYYqH24NtPwhpQEjo=
+			</data>
+		</dict>
 		<key>MauiSplash.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash2</key>
@@ -1286,14 +1297,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			txavLVDi1Q5HgGyl1nhcaxvElqEwz9uTBim+/vEukgE=
+			ByMa9FDIFYJMPIQvqRo8TQJcvRH9TkLD16sMEXAuAJY=
 			</data>
 		</dict>
 		<key>RoomReservationApp.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UhBoKBKayFUsSWgW3a3yh4o9QdSK1rQvmaEC5G+rvgs=
+			SDrh38H8y6K0phk3v9w/3ubJF4QV8fZg4LMh9OEzX2I=
 			</data>
 		</dict>
 		<key>Settings.bundle/Root.plist</key>
