@@ -7,69 +7,105 @@
     xmlns:models="clr-namespace:RoomReservationApp.Models"
     Title="View Requests">
 
-    <VerticalStackLayout Padding="20" Spacing="15">
+    <Grid
+        Padding="20"
+        RowDefinitions="Auto,Auto,*,Auto"
+        RowSpacing="15">
 
+        <!-- Page title -->
         <Label
+            Grid.Row="0"
             Text="Reservation Requests"
-            FontSize="26"
-            FontAttributes="Bold"
-            HorizontalOptions="Center" 
-            Style="{StaticResource PageTitleStyle}"/>
+            Style="{StaticResource PageTitleStyle}" />
 
+        <!-- Selected room -->
         <Label
             x:Name="RoomNumberLabel"
+            Grid.Row="1"
             FontSize="20"
             FontAttributes="Bold"
             HorizontalOptions="Center" />
 
+        <!-- Reservation list -->
         <CollectionView
             x:Name="RequestsCollectionView"
-            EmptyView="No reservation requests for this room.">
+            Grid.Row="2">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Spacing="10">
+
+                    <Label
+                        Text="No reservation requests"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center" />
+
+                    <Label
+                        Text="There are no requests for this room yet."
+                        HorizontalTextAlignment="Center" />
+
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
 
             <CollectionView.ItemTemplate>
+
                 <DataTemplate x:DataType="models:ReservationRequest">
 
-                    <Border Style="{StaticResource RoomCardStyle}">
+                    <Border
+                        Style="{StaticResource RoomCardStyle}">
 
-                        <VerticalStackLayout Spacing="5">
-
-                            <Label
-                                Text="{Binding RequestID, StringFormat='Request #{0}'}"
-                                FontAttributes="Bold"
-                                FontSize="18" />
+                        <VerticalStackLayout Spacing="6">
 
                             <Label
-                                Text="{Binding RequestedBy, StringFormat='Requested by: {0}'}" />
+                                Text="{Binding RequestID,
+                                StringFormat='Request #{0}'}"
+                                FontSize="18"
+                                FontAttributes="Bold" />
 
                             <Label
-                                Text="{Binding Description, StringFormat='Purpose: {0}'}" />
+                                Text="{Binding RequestedBy,
+                                StringFormat='Requested by: {0}'}" />
 
                             <Label
-                                Text="{Binding StartDateTime, StringFormat='Start: {0:g}'}" />
+                                Text="{Binding Description,
+                                StringFormat='Purpose: {0}'}" />
 
                             <Label
-                                Text="{Binding EndDateTime, StringFormat='End: {0:g}'}" />
+                                Text="{Binding StartDateTime,
+                                StringFormat='Start: {0:g}'}" />
 
                             <Label
-                                Text="{Binding ParticipantCount, StringFormat='Participants: {0}'}" />
+                                Text="{Binding EndDateTime,
+                                StringFormat='End: {0:g}'}" />
 
                             <Label
-                                Text="{Binding RequestStatus, StringFormat='Status: {0}'}" />
+                                Text="{Binding ParticipantCount,
+                                StringFormat='Participants: {0}'}" />
+
+                            <Label
+                                Text="{Binding RequestStatus,
+                                StringFormat='Status: {0}'}" />
 
                         </VerticalStackLayout>
 
                     </Border>
 
                 </DataTemplate>
+
             </CollectionView.ItemTemplate>
 
         </CollectionView>
 
+        <!-- Always visible at bottom -->
         <Button
+            Grid.Row="3"
             Text="Back to Rooms"
             Style="{StaticResource PrimaryButtonStyle}"
             Clicked="OnBackToRoomsClicked" />
 
-    </VerticalStackLayout>
+    </Grid>
 
 </ContentPage>

@@ -7,56 +7,77 @@
     xmlns:models="clr-namespace:RoomReservationApp.Models"
     Title="Meeting Rooms">
 
-    <VerticalStackLayout Padding="20" Spacing="15">
+    <Grid
+        Padding="20"
+        RowDefinitions="Auto,*,Auto,Auto,Auto,Auto"
+        RowSpacing="12">
 
         <Label
+            Grid.Row="0"
             Text="Meeting Rooms"
-            
             Style="{StaticResource PageTitleStyle}" />
 
         <CollectionView
             x:Name="RoomsCollectionView"
+            Grid.Row="1"
             ItemsSource="{Binding MeetingRooms}"
             SelectionMode="Single"
             SelectionChanged="OnRoomSelectionChanged">
 
             <CollectionView.ItemTemplate>
+
                 <DataTemplate x:DataType="models:MeetingRoom">
+
                     <Border Style="{StaticResource RoomCardStyle}">
-                        <HorizontalStackLayout Spacing="15">
+
+                        <Grid
+                            ColumnDefinitions="60,*"
+                            ColumnSpacing="15">
 
                             <Image
+                                Grid.Column="0"
                                 Source="{Binding RoomTypeIcon}"
                                 WidthRequest="50"
-                                HeightRequest="50" />
+                                HeightRequest="50"
+                                Aspect="AspectFit" />
 
-                            <VerticalStackLayout>
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                VerticalOptions="Center">
+
                                 <Label
                                     Text="{Binding RoomNumber}"
                                     FontAttributes="Bold"
                                     FontSize="18" />
 
                                 <Label
-                                    Text="{Binding SeatingCapacity, StringFormat='Capacity: {0}'}" />
+                                    Text="{Binding SeatingCapacity,
+                                    StringFormat='Capacity: {0}'}" />
 
                                 <Label
                                     Text="{Binding RoomLayoutType}" />
+
                             </VerticalStackLayout>
 
-                        </HorizontalStackLayout>
+                        </Grid>
+
                     </Border>
+
                 </DataTemplate>
+
             </CollectionView.ItemTemplate>
+
         </CollectionView>
 
         <Image
             x:Name="SelectedRoomImage"
+            Grid.Row="2"
             HeightRequest="200"
-            Aspect="AspectFit"
-            Source="dotnet_bot.png" />
+            Aspect="AspectFit" />
 
         <Label
             x:Name="SelectedRoomLabel"
+            Grid.Row="3"
             Text="Select a meeting room"
             FontSize="20"
             FontAttributes="Bold"
@@ -64,23 +85,32 @@
 
         <Label
             x:Name="SelectedRoomDetailsLabel"
+            Grid.Row="4"
             Text="Room details will appear here."
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center" />
 
-        <Button
-            x:Name="AddRequestButton"
-            Text="Add Request"
-            IsEnabled="False"
-            Style="{StaticResource PrimaryButtonStyle}"
-            Clicked="OnAddRequestClicked" />
+        <HorizontalStackLayout
+            Grid.Row="5"
+            HorizontalOptions="Center"
+            Spacing="15">
 
-        <Button
-            x:Name="ViewRequestsButton"
-            Text="View Requests"
-            IsEnabled="False"
-            Style="{StaticResource PrimaryButtonStyle}"
-            Clicked="OnViewRequestsClicked" />
+            <Button
+                x:Name="AddRequestButton"
+                Text="Add Request"
+                IsEnabled="False"
+                Style="{StaticResource PrimaryButtonStyle}"
+                Clicked="OnAddRequestClicked" />
 
-    </VerticalStackLayout>
+            <Button
+                x:Name="ViewRequestsButton"
+                Text="View Requests"
+                IsEnabled="False"
+                Style="{StaticResource PrimaryButtonStyle}"
+                Clicked="OnViewRequestsClicked" />
+
+        </HorizontalStackLayout>
+
+    </Grid>
 
 </ContentPage>

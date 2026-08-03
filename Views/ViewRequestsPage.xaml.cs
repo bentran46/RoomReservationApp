@@ -13,16 +13,18 @@ public partial class ViewRequestsPage : ContentPage
         _selectedRoom = selectedRoom;
 
         RoomNumberLabel.Text =
-            $"Room {_selectedRoom.RoomNumber}";
+            $"Requests for Room {_selectedRoom.RoomNumber}";
 
         LoadRequests();
     }
 
     private void LoadRequests()
     {
-        RequestsCollectionView.ItemsSource =
+        var requests =
             App.ReservationManager.GetRequestsForRoom(
                 _selectedRoom.RoomNumber);
+
+        RequestsCollectionView.ItemsSource = requests;
     }
 
     protected override void OnAppearing()

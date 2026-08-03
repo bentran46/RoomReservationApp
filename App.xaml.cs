@@ -37,25 +37,25 @@ public partial class App : Application
             "S105",
             20,
             RoomLayoutType.HollowSquare,
-            "dotnet_bot.png");
+            "hollowsquare_icon.svg");
 
         ReservationManager.AddMeetingRoom(
             "S106",
             30,
             RoomLayoutType.UShape,
-            "dotnet_bot.png");
+            "ushape_icon.svg");
 
         ReservationManager.AddMeetingRoom(
             "S107",
             40,
             RoomLayoutType.Classroom,
-            "dotnet_bot.png");
+            "classroom_icon.svg");
 
         ReservationManager.AddMeetingRoom(
             "S108",
             100,
             RoomLayoutType.Auditorium,
-            "dotnet_bot.png");
+            "auditorium_icon.svg");
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
