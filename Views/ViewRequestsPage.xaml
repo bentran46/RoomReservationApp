@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="RoomReservationApp.Views.ViewRequestsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:RoomReservationApp.Models"
+    Title="View Requests">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label
+            Text="Reservation Requests"
+            FontSize="26"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+        <Label
+            x:Name="RoomNumberLabel"
+            FontSize="20"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+        <CollectionView
+            x:Name="RequestsCollectionView"
+            EmptyView="No reservation requests for this room.">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:ReservationRequest">
+
+                    <Border
+                        Padding="12"
+                        Margin="0,5"
+                        Stroke="#CCCCCC">
+
+                        <VerticalStackLayout Spacing="5">
+
+                            <Label
+                                Text="{Binding RequestID, StringFormat='Request #{0}'}"
+                                FontAttributes="Bold"
+                                FontSize="18" />
+
+                            <Label
+                                Text="{Binding RequestedBy, StringFormat='Requested by: {0}'}" />
+
+                            <Label
+                                Text="{Binding Description, StringFormat='Purpose: {0}'}" />
+
+                            <Label
+                                Text="{Binding StartDateTime, StringFormat='Start: {0:g}'}" />
+
+                            <Label
+                                Text="{Binding EndDateTime, StringFormat='End: {0:g}'}" />
+
+                            <Label
+                                Text="{Binding ParticipantCount, StringFormat='Participants: {0}'}" />
+
+                            <Label
+                                Text="{Binding RequestStatus, StringFormat='Status: {0}'}" />
+
+                        </VerticalStackLayout>
+
+                    </Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <Button
+            Text="Back to Rooms"
+            Clicked="OnBackToRoomsClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
