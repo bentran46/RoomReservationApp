@@ -74,9 +74,7 @@ public partial class PickRoomPage : ContentPage
             return;
         }
 
-        await DisplayAlertAsync(
-            "Selected Room",
-            $"Viewing requests for {_selectedRoom.RoomNumber}",
-            "OK");
+        await Navigation.PushAsync(
+            new ViewRequestsPage(_selectedRoom));
     }
 }
