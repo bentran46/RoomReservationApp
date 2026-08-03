@@ -13,8 +13,8 @@
 
             <Label
                 Text="Add Reservation Request"
-                FontSize="26"
-                FontAttributes="Bold" />
+                Style="{StaticResource PageTitleStyle}" 
+                 />
 
             <Image
                 x:Name="RoomImage"
@@ -32,11 +32,14 @@
 
             <Entry
                 x:Name="RequestedByEntry"
-                Placeholder="Your name" />
+                Placeholder="Your name"
+                Style="{StaticResource AssignmentEntryStyle}"/>
 
             <Entry
                 x:Name="DescriptionEntry"
-                Placeholder="Meeting purpose" />
+                Placeholder="Meeting purpose" 
+                Keyboard="Numeric"
+                Style="{StaticResource AssignmentEntryStyle}"/>
 
             <Label Text="Meeting Date" />
 
@@ -60,10 +63,12 @@
 
             <Button
                 Text="Add Request"
+                Style="{StaticResource PrimaryButtonStyle}"
                 Clicked="OnAddRequestClicked" />
 
             <Button
                 Text="Back to Rooms"
+                Style="{StaticResource PrimaryButtonStyle}"
                 Clicked="OnBackToRoomsClicked" />
 
         </VerticalStackLayout>

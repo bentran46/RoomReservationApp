@@ -13,7 +13,8 @@
             Text="Reservation Requests"
             FontSize="26"
             FontAttributes="Bold"
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+            Style="{StaticResource PageTitleStyle}"/>
 
         <Label
             x:Name="RoomNumberLabel"
@@ -28,10 +29,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:ReservationRequest">
 
-                    <Border
-                        Padding="12"
-                        Margin="0,5"
-                        Stroke="#CCCCCC">
+                    <Border Style="{StaticResource RoomCardStyle}">
 
                         <VerticalStackLayout Spacing="5">
 
@@ -69,6 +67,7 @@
 
         <Button
             Text="Back to Rooms"
+            Style="{StaticResource PrimaryButtonStyle}"
             Clicked="OnBackToRoomsClicked" />
 
     </VerticalStackLayout>

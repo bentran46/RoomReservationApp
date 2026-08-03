@@ -11,9 +11,8 @@
 
         <Label
             Text="Meeting Rooms"
-            FontSize="28"
-            FontAttributes="Bold"
-            HorizontalOptions="Center" />
+            
+            Style="{StaticResource PageTitleStyle}" />
 
         <CollectionView
             x:Name="RoomsCollectionView"
@@ -23,7 +22,7 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:MeetingRoom">
-                    <Border Padding="10" Margin="0,5">
+                    <Border Style="{StaticResource RoomCardStyle}">
                         <HorizontalStackLayout Spacing="15">
 
                             <Image
@@ -72,12 +71,14 @@
             x:Name="AddRequestButton"
             Text="Add Request"
             IsEnabled="False"
+            Style="{StaticResource PrimaryButtonStyle}"
             Clicked="OnAddRequestClicked" />
 
         <Button
             x:Name="ViewRequestsButton"
             Text="View Requests"
             IsEnabled="False"
+            Style="{StaticResource PrimaryButtonStyle}"
             Clicked="OnViewRequestsClicked" />
 
     </VerticalStackLayout>
